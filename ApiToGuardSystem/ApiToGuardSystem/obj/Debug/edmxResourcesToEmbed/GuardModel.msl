@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GuardSystemModelStoreContainer" CdmEntityContainer="GuardSystemEntities">
+    <EntitySetMapping Name="Guard_user">
+      <EntityTypeMapping TypeName="GuardSystemModel.Guard_user">
+        <MappingFragment StoreEntitySet="Guard_user">
+          <ScalarProperty Name="UID" ColumnName="UID" />
+          <ScalarProperty Name="RID" ColumnName="RID" />
+          <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="AUTHORITY" ColumnName="AUTHORITY" />
+          <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
