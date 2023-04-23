@@ -199,8 +199,8 @@
     <Content Include="Global.asax" />
     <Content Include="GuardModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>GuardModel.Context.cs</LastGenOutput>
       <DependentUpon>GuardModel.edmx</DependentUpon>
+      <LastGenOutput>GuardModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="GuardModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

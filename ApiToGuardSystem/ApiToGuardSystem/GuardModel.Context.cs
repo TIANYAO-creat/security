@@ -13,10 +13,10 @@ namespace ApiToGuardSystem
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class GuardSystemEntities : DbContext
+    public partial class GuardSystemEntities1 : DbContext
     {
-        public GuardSystemEntities()
-            : base("name=GuardSystemEntities")
+        public GuardSystemEntities1()
+            : base("name=GuardSystemEntities1")
         {
         }
     

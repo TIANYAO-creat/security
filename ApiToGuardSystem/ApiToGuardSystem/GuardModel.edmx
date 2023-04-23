@@ -5,9 +5,12 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="GuardSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“GuardSystem.dbo.Guard_user”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="Guard_user">
           <Key>
             <PropertyRef Name="UID" />
+            <PropertyRef Name="RID" />
           </Key>
           <Property Name="UID" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="RID" Type="int" Nullable="false" />
@@ -17,7 +20,16 @@
           <Property Name="LOCATION" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityContainer Name="GuardSystemModelStoreContainer">
-          <EntitySet Name="Guard_user" EntityType="Self.Guard_user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Guard_user" EntityType="Self.Guard_user" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Guard_user].[UID] AS [UID], 
+    [Guard_user].[RID] AS [RID], 
+    [Guard_user].[ACCOUNT] AS [ACCOUNT], 
+    [Guard_user].[PASSWORD] AS [PASSWORD], 
+    [Guard_user].[AUTHORITY] AS [AUTHORITY], 
+    [Guard_user].[LOCATION] AS [LOCATION]
+    FROM [dbo].[Guard_user] AS [Guard_user]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -27,6 +39,7 @@
         <EntityType Name="Guard_user">
           <Key>
             <PropertyRef Name="UID" />
+            <PropertyRef Name="RID" />
           </Key>
           <Property Name="UID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="RID" Type="Int32" Nullable="false" />
@@ -35,7 +48,7 @@
           <Property Name="AUTHORITY" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="GuardSystemEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="GuardSystemEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Guard_user" EntityType="Self.Guard_user" />
         </EntityContainer>
       </Schema>
@@ -43,7 +56,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="GuardSystemModelStoreContainer" CdmEntityContainer="GuardSystemEntities">
+        <EntityContainerMapping StorageEntityContainer="GuardSystemModelStoreContainer" CdmEntityContainer="GuardSystemEntities1">
           <EntitySetMapping Name="Guard_user">
             <EntityTypeMapping TypeName="GuardSystemModel.Guard_user">
               <MappingFragment StoreEntitySet="Guard_user">

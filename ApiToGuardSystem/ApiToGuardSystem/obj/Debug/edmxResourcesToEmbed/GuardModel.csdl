@@ -3,6 +3,7 @@
   <EntityType Name="Guard_user">
     <Key>
       <PropertyRef Name="UID" />
+      <PropertyRef Name="RID" />
     </Key>
     <Property Name="UID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="RID" Type="Int32" Nullable="false" />
@@ -11,7 +12,7 @@
     <Property Name="AUTHORITY" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="LOCATION" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="GuardSystemEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="GuardSystemEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Guard_user" EntityType="Self.Guard_user" />
   </EntityContainer>
 </Schema>

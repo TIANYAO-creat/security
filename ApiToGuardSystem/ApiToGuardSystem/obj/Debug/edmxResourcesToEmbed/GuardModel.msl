@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="GuardSystemModelStoreContainer" CdmEntityContainer="GuardSystemEntities">
+  <EntityContainerMapping StorageEntityContainer="GuardSystemModelStoreContainer" CdmEntityContainer="GuardSystemEntities1">
     <EntitySetMapping Name="Guard_user">
       <EntityTypeMapping TypeName="GuardSystemModel.Guard_user">
         <MappingFragment StoreEntitySet="Guard_user">

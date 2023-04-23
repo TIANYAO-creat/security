@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="88ec509c62894a5b98f8daa71f39e75b" Name="Diagram1">
+      <Diagram DiagramId="a9b1f4597504496993ff12b43743ee37" Name="Diagram1">
         <EntityTypeShape EntityType="GuardSystemModel.Guard_user" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

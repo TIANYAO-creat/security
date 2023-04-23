@@ -11,10 +11,10 @@ namespace ApiToGuardSystem.Controllers
 {
     public class RegisterController : ApiController
     {
-        private GuardSystemEntities guardDb = new GuardSystemEntities();
+        private GuardSystemEntities1 guardDb = new GuardSystemEntities1();
 
         //[Route("api/v1/login/GetToken")]
-        [HttpPost]
+        [HttpPost] 
         public JObject GetToken(string username, string password)
         {
             string msg = string.Empty;

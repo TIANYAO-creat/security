@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="GuardSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--生成过程中发现错误:
+警告 6002: 表/视图“GuardSystem.dbo.Guard_user”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
   <EntityType Name="Guard_user">
     <Key>
       <PropertyRef Name="UID" />
+      <PropertyRef Name="RID" />
     </Key>
     <Property Name="UID" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="RID" Type="int" Nullable="false" />
@@ -12,6 +15,15 @@
     <Property Name="LOCATION" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityContainer Name="GuardSystemModelStoreContainer">
-    <EntitySet Name="Guard_user" EntityType="Self.Guard_user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guard_user" EntityType="Self.Guard_user" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Guard_user].[UID] AS [UID], 
+    [Guard_user].[RID] AS [RID], 
+    [Guard_user].[ACCOUNT] AS [ACCOUNT], 
+    [Guard_user].[PASSWORD] AS [PASSWORD], 
+    [Guard_user].[AUTHORITY] AS [AUTHORITY], 
+    [Guard_user].[LOCATION] AS [LOCATION]
+    FROM [dbo].[Guard_user] AS [Guard_user]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>
